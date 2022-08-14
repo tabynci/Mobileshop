@@ -1,5 +1,5 @@
 <?php 
-
+include_once('../includes/config.php');
 $error=''; // Variable To Store Error Message
 if(isset($_POST['LoginAction'])) {
 // Starting Session
@@ -8,9 +8,8 @@ if(isset($_POST['LoginAction'])) {
     $email=$_POST['email'];
     $password=$_POST['password'];
     //esatblish  connection with server with servername , emailid and password as parameter
-    $connection = mysqli_connect("localhost","root","qwerty");
-    $db =mysqli_select_db($connection,"testing");
-    $query=mysqli_query($connection,"select * from register where password='$password' AND email='$email'");
+    //$db =mysqli_select_db($connection,"testing");
+    $query=mysqli_query($con,"select * from register where password='$password' AND email='$email'");
     $rows=mysqli_num_rows($query);
     if($rows == 1)
     {
@@ -18,7 +17,7 @@ if(isset($_POST['LoginAction'])) {
       $_SESSION['admin_user']=NULL;
       header("location:home.php");
     }else{
-      $query=mysqli_query($connection,"select * from admin where password='$password' AND email='$email'");
+      $query=mysqli_query($con,"select * from admin where password='$password' AND email='$email'");
       $rows=mysqli_num_rows($query);
       if($rows == 1) 
       {
@@ -33,7 +32,7 @@ if(isset($_POST['LoginAction'])) {
       }
       
     }
-    mysqli_close($connection);
+    mysqli_close($con);
 }
 ?>
 <!DOCTYPE html>

@@ -5,8 +5,6 @@ include_once('../includes/config.php');
 //   header('location:logout.php');
 // }
 $error='';
-$con = new mysqli('localhost','root','', 'testing');
-
  if (isset($_POST['submit'])) {
  $first_name=$_POST['firstname'];
  $last_name=$_POST['lastname'];

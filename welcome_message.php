@@ -203,20 +203,20 @@ ul{
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="2000">
       <div>
-      <img src="./images/samsung Galaxy s8.jpeg" alt="samsung"height="450px">
+      <img src="./images/samsung-galaxy-s10.jpg" alt="samsung"height="450px">
       <div class="carousel-caption d-none d-md-block carousel-caption-down">
-        <h5 class="color-phone">Samsung Galaxy s8</h5>
+        <h5 class="color-phone">Samsung Galaxy s10</h5>
       </div>
      </div>
     </div>
     <div class="carousel-item" data-bs-interval="2000">
-      <img src="./images/iphone 13 Pro Max.jpeg" alt="iphone" height="450px">
+      <img src="./images/iphone11.jpg" alt="iphone" height="450px">
       <div class="carousel-caption d-none d-md-block carousel-caption-down">
         <h5 class="color-phone">iphone 13 Pro Max</h5>
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="2000">
-      <img src="./images/iphonex.jpeg" alt="iphone" height="450px">
+      <img src="./images/iphonex.jpg" alt="iphone" height="450px">
       <div class="carousel-caption d-none d-md-block carousel-caption-down">
         <h5 class="color-phone">iphonex</h5>
       </div>

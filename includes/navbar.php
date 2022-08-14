@@ -44,52 +44,52 @@ include_once('../includes/config.php');
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <?php if(isset($_SESSION['admin_user']) == 1) {?>
+    <div class="collapse navbar-collapse nav-font" id="navbarNav">
+    <ul class="navbar-nav linkcolor hover">
+      <li class="nav-item hovercolor">
+        <a class="nav-link  linkcolor" href="../admin/adminProfile.php">Dashboard</a>
+      </li>
+      <li class="nav-item hovercolor">
+        <a class="nav-link  linkcolor" href="./logout.php">Logout</a>
+      </li> 
+    </ul>
+  </div>
+  <?php } else if(isset($_SESSION['login_user']) == 1) {?>
   <div class="collapse navbar-collapse nav-font" id="navbarNav">
     <ul class="navbar-nav linkcolor hover">
-    <?php
-      if(isset($_SESSION['login_user']) == 0)
-      {?>
-      <li class="nav-item active hovercolor">
-        <a class="nav-link linkcolor" href="../welcome_message.php">Home <span class="sr-only"></span></a>
-      </li>
-      <?php } else { ?>
-        <li class="nav-item hovercolor">
-          <a class="nav-link  linkcolor" href="./home.php">Home</a>
-        </li>     
-        <?php } ?>
+      <li class="nav-item hovercolor">
+        <a class="nav-link  linkcolor" href="./home.php">Home</a>
+      </li>     
       <li class="nav-item hovercolor">
         <a class="nav-link  linkcolor" href="./About.php">About</a>
-      </li>
-      <?php
-      if(isset($_SESSION['login_user']) == 0)
-      {?>      
+      </li>    
       <li class="nav-item hovercolor">
-        <a class="nav-link  linkcolor" href="./add.php">Register</a>
-      </li>
-        <li class="nav-item hovercolor">
-          <a class="nav-link  linkcolor" href="./login.php">Login</a>
-        </li>
-      <?php } else { ?>   
+        <a class="nav-link  linkcolor" href="./profile.php">Dashboard</a>
+      </li>      
       <li class="nav-item hovercolor">
         <a class="nav-link linkcolor"  href="./cart.php">Cart</a>
       </li>
-      <?php
-      if(isset($_SESSION['admin_user']) == 0)
-      {?>
       <li class="nav-item hovercolor">
-        <a class="nav-link  linkcolor" href="./profile.php">Dashboard</a>
-      </li>
-      <?php } else { ?> 
-        <li class="nav-item hovercolor">
-        <a class="nav-link  linkcolor" href="../admin/adminProfile.php">Dashboard</a>
-      </li>
-      <?php } ?>
-      <li class="nav-item hovercolor">
-          <a class="nav-link  linkcolor" href="./logout.php">Logout</a>
-        </li>   
-      <?php } ?>
+        <a class="nav-link  linkcolor" href="./logout.php">Logout</a>
+      </li> 
     </ul>
   </div>
+  <?php } else { ?>
+    <div class="collapse navbar-collapse nav-font" id="navbarNav">
+    <ul class="navbar-nav linkcolor hover">
+      <li class="nav-item active hovercolor">
+        <a class="nav-link linkcolor" href="../welcome_message.php">Home <span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item hovercolor">
+        <a class="nav-link  linkcolor" href="./add.php">Register</a>
+      </li>
+      <li class="nav-item hovercolor">
+        <a class="nav-link  linkcolor" href="./login.php">Login</a>
+      </li>
+    </ul>
+  </div>
+  <?php } ?>
 </nav>
 </div>
 </html>

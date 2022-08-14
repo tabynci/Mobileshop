@@ -1,7 +1,7 @@
 <?php 
 $error='';
-$con = new mysqli('localhost','root','qwerty', 'testing');
 
+include_once('../includes/config.php');
  if (isset($_POST['Register']) != 0) {
  $first_name=$_POST['firstname'];
  $last_name=$_POST['lastname'];
@@ -131,7 +131,7 @@ ul{
   }
    else
    {
-  echo $_POST["password"];  
+  // echo $_POST["password"];  
    $password = test_input($_POST["password"]);  
     echo $password;
    $number = preg_match('@[0-9]@', $_POST["password"]);
